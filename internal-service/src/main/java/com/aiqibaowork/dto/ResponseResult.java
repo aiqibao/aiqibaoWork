@@ -1,6 +1,6 @@
-package com.aiqibao.dto;
+package com.aiqibaowork.dto;
 
-import com.aiqibao.constant.BusinessInterfaceStatus;
+import com.aiqibaowork.constant.BusinessInterfaceStatus;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.springframework.http.HttpStatus;

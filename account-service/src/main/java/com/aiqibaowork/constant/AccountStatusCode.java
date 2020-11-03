@@ -1,6 +1,5 @@
 package com.aiqibaowork.constant;
 
-import com.aiqibao.constant.CodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

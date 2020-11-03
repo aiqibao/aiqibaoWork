@@ -1,7 +1,7 @@
 package com.aiqibaowork.controller;
 
-import com.aiqibao.dto.ResponseResult;
 import com.aiqibaowork.constant.AccountStatusCode;
+import com.aiqibaowork.dto.ResponseResult;
 import com.aiqibaowork.request.CheckTokenRequest;
 import com.aiqibaowork.request.CreateTokenRequest;
 import com.aiqibaowork.request.GetTokenRequest;
@@ -35,7 +35,7 @@ public class AuthTokenController {
     private PassengerRegistHandleService passengerRegistHandleService;
 
     private static final String ONE = "1" ;
-    @PostMapping(value = "/checkToken")
+        @PostMapping(value = "/checkToken")
     public ResponseResult checkToken(@RequestBody CheckTokenRequest request){
         if (null == request.getToken()){
             return ResponseResult.fail(1, AccountStatusCode.TOKEN_IS_EMPTY.getValue());
@@ -62,6 +62,7 @@ public class AuthTokenController {
         return ResponseResult.success(authService.createToken(subject)) ;
     }
 
+    @PostMapping(value = "/checkout")
     public ResponseResult checkout(@RequestBody GetTokenRequest request) throws Exception {
         String token = request.getToken() ;
 

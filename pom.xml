@@ -23,8 +23,6 @@
         <easyexcel.version>1.1.2-beta4</easyexcel.version>
     </properties>
     <modules>
-        <module>aiqibaowork-common</module>
-        <module>aiqibaowork-redis</module>
         <module>account-service</module>
         <module>internal-service</module>
     </modules>

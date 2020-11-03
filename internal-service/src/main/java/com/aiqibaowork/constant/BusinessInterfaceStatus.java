@@ -1,4 +1,4 @@
-package com.aiqibao.constant;
+package com.aiqibaowork.constant;
 
 import lombok.Getter;
 

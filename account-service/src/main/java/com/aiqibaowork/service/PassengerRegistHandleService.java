@@ -1,6 +1,6 @@
 package com.aiqibaowork.service;
 
-import com.aiqibao.dto.ResponseResult;
+import com.aiqibaowork.dto.ResponseResult;
 import com.aiqibaowork.request.GetTokenRequest;
 
 /**
