@@ -21,3 +21,13 @@ address:
     - valuation: http://localhost:8088
     - file: http://localhost:8089
     - government: http://localhost:9999
+#internal 程序内部
+logging:
+  config: classpath:log/logback-spring.xml
+  level:
+    com.aiqibao: debug
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true

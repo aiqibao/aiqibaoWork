@@ -1,7 +1,6 @@
 package com.aiqibaowork.mapper;
 
 import com.aiqibaowork.entity.PassengerInfo;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,7 @@ public interface PassengerInfoMapper {
 
     int updateByPrimaryKey(PassengerInfo record);
 
-    PassengerInfo queryPassengerInfoByPhoneNum(@Param("phone") String phone);
+    PassengerInfo queryPassengerInfoByPhoneNum(String phone);
 
     int updatePassengerBalance(Map<String, Object> map);
 

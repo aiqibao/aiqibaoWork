@@ -1,10 +1,9 @@
 package com.aiqibaowork.mapper;
 
 import com.aiqibaowork.entity.PassengerAddress;
-import org.apache.ibatis.annotations.*;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
-
+@Service
 public interface PassengerAddressMapper {
     int deleteByPrimaryKey(Integer id);
 

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 /**
+ * 乘客端
  * @Author:aiqibao
  * @Date:2020/11/2 17:23
  * Best wish!
@@ -28,4 +29,18 @@ public class PassengerInfoDao {
     public PassengerInfo queryPassengerInfoByPhoneNum(String phoneNum){
         return passengerInfoMapper.queryPassengerInfoByPhoneNum(phoneNum) ;
     }
+
+    public int insertSelective(PassengerInfo passengerInfo){
+        return passengerInfoMapper.insertSelective(passengerInfo) ;
+    }
+    public PassengerInfo selectByParimaryKey(Integer passengerId){
+        return passengerInfoMapper.selectByPrimaryKey(passengerId) ;
+    }
+    public int updateByPrimaryKeySelective(PassengerInfo record) {
+        return passengerInfoMapper.updateByPrimaryKeySelective(record);
+    }
+    public int updateByPrimaryKey(PassengerInfo record) {
+        return passengerInfoMapper.updateByPrimaryKey(record);
+    }
+
 }

@@ -96,9 +96,10 @@ public class PassengerRegistHandleServiceImp implements PassengerRegistHandleSer
         String jwtStr = authService.createToken(subject) ;
         log.info("乘客注册或登录用户 - {} - access_token：{}",phoneNum,jwtStr);
         passengerInfo = passengerInfoService.queryPassengerInfoByPhoneNum(strPhoneNum) ;
+        long dateTime = passengerInfo.getBirthday()==null?0:passengerInfo.getBirthday().getTime();
         return createResponse(jwtStr,passengerInfo.getPassengerName(),passengerInfo.getGender(),passengerInfo.getBalance()
         ,passengerInfo.getPhone(),passengerInfo.getHeadImg(),passengerInfo.getId(),passengerInfo.getLastLoginTime(),passengerInfo.getLastLoginMethod()
-        ,passengerInfo.getIsContact(),passengerInfo.getIsShare(),passengerInfo.getSharingTime(),passengerInfo.getBirthday().getTime(),isNew);
+        ,passengerInfo.getIsContact(),passengerInfo.getIsShare(),passengerInfo.getSharingTime(),dateTime,isNew);
     }
 
     /**
