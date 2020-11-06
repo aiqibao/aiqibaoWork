@@ -144,7 +144,6 @@ public class PassengerController {
             return ResponseResult.success("") ;
         }else{
             return ResponseResult.fail("无可更新的乘客额外信息") ;
-
         }
     }
 }
