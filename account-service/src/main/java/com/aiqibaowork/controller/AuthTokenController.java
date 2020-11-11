@@ -35,7 +35,7 @@ public class AuthTokenController {
     private PassengerRegistHandleService passengerRegistHandleService;
 
     private static final String ONE = "1" ;
-        @PostMapping(value = "/checkToken")
+    @PostMapping(value = "/checkToken")
     public ResponseResult checkToken(@RequestBody CheckTokenRequest request){
         if (null == request.getToken()){
             return ResponseResult.fail(1, AccountStatusCode.TOKEN_IS_EMPTY.getValue());

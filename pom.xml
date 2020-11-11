@@ -26,6 +26,7 @@
         <module>account-service</module>
         <module>internal-service</module>
         <module>pay-service</module>
+        <module>jvm-study</module>
     </modules>
     <name>aiqibaowork</name>
     <description>aiqibaowork</description>

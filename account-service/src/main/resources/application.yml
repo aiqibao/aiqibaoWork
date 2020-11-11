@@ -7,8 +7,9 @@ spring:
     password: wzf992816
   redis:
     database: 1
-    host: 175.24.124.91
-    port: 6380
+    host: 10.16.20.190
+    port: 6379
+    password: mredis18fgdhjwke
 services:
 address:
     - account: http://localhost:8081

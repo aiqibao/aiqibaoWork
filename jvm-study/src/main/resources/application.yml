@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: jvm-eureka
+  security:
+    user:
+      name: root
+      password: root
+  profiles: 7900
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7900/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+logging:
+  level: info
+server:
+  port: 7900
