@@ -27,6 +27,7 @@
         <module>internal-service</module>
         <module>pay-service</module>
         <module>jvm-study</module>
+        <module>kafka-demo</module>
     </modules>
     <name>aiqibaowork</name>
     <description>aiqibaowork</description>
