@@ -45,4 +45,9 @@ public class RowDataHandlerImpl implements RowDataHandler<CanalEntry.RowData> {
             }
         }
     }
+
+    @Override
+    public <R> void handlerDdlData() throws Exception {
+
+    }
 }

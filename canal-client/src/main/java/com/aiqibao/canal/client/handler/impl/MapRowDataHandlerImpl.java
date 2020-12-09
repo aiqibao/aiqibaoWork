@@ -43,4 +43,9 @@ public class MapRowDataHandlerImpl implements RowDataHandler<List<Map<String, St
             }
         }
     }
+
+    @Override
+    public <R> void handlerDdlData() throws Exception {
+
+    }
 }
