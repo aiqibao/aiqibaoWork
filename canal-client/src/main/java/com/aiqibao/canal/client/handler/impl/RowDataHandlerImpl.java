@@ -21,6 +21,14 @@ public class RowDataHandlerImpl implements RowDataHandler<CanalEntry.RowData> {
         this.modelFactory = modelFactory;
     }
 
+    /**
+     * process dml sql
+     * @param rowData
+     * @param entryHandler
+     * @param eventType
+     * @param <R>
+     * @throws Exception
+     */
     @Override
     public <R> void handlerRowData(CanalEntry.RowData rowData, EntryHandler<R> entryHandler, CanalEntry.EventType eventType) throws Exception {
         if (entryHandler != null) {
@@ -46,8 +54,21 @@ public class RowDataHandlerImpl implements RowDataHandler<CanalEntry.RowData> {
         }
     }
 
+    /**
+     * process ddl sql
+     *
+     * @param sql
+     * @param entryHandler
+     * @param eventType
+     * @throws Exception
+     */
     @Override
-    public <R> void handlerDdlData() throws Exception {
-
+    public <R> void handlerDdlData(String sql, EntryHandler<R> entryHandler, CanalEntry.EventType eventType) throws Exception {
+        if (entryHandler != null) {
+            switch (eventType){
+                case CREATE:
+                    entryHandler.create(sql);
+            }
+        }
     }
 }

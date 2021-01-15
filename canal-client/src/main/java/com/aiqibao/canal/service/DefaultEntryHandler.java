@@ -63,4 +63,10 @@ public class DefaultEntryHandler implements EntryHandler<Map<String,String>> {
         String table = CanalContext.getModel().getTable();
         dsl.delete(table(table)).where(field("id").eq(map.get("id"))).execute();
     }
+
+    @Override
+    public void create(String str) {
+        log.info("ddl {}",str) ;
+        dsl.createTable(str).execute() ;
+    }
 }

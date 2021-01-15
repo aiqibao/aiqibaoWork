@@ -6,7 +6,6 @@ import com.aiqibao.canal.client.util.HandlerUtil;
 import com.alibaba.otter.canal.protocol.CanalEntry;
 import com.alibaba.otter.canal.protocol.Message;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.SystemUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -42,11 +41,13 @@ public abstract class AbstractMessageHandler implements MessageHandler<Message> 
                                 .executeTime(entry.getHeader().getExecuteTime()).database(entry.getHeader().getSchemaName()).build();
                         CanalContext.setModel(model);
                         CanalEntry.RowChange rowChange = CanalEntry.RowChange.parseFrom(entry.getStoreValue());
+                        CanalEntry.EventType eventType = rowChange.getEventType();
                         if (CanalEntry.EventType.QUERY == rowChange.getEventType() || rowChange.getIsDdl()){
                             log.debug("SQL [{}] --> {}", entry.getHeader().getTableName(), rowChange.getSql());
+                            rowDataHandler.handlerDdlData(rowChange.getSql(),entryHandler,eventType);
                         }
                         List<CanalEntry.RowData> rowDataList = rowChange.getRowDatasList();
-                        CanalEntry.EventType eventType = rowChange.getEventType();
+
                         for (CanalEntry.RowData rowData : rowDataList) {
                             rowDataHandler.handlerRowData(rowData,entryHandler,eventType);
                         }

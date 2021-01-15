@@ -13,5 +13,5 @@ public interface EntryHandler<T> {
 
     default void delete(T t){}
 
-    default void create(T t){}
+    default void create(String str){}
 }

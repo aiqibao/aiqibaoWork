@@ -21,6 +21,14 @@ public class MapRowDataHandlerImpl implements RowDataHandler<List<Map<String, St
         this.modelFactory = modelFactory;
     }
 
+    /**
+     * process dml sql
+     * @param list
+     * @param entryHandler
+     * @param eventType
+     * @param <R>
+     * @throws Exception
+     */
     @Override
     public <R> void handlerRowData(List<Map<String, String>> list, EntryHandler<R> entryHandler, CanalEntry.EventType eventType) throws Exception{
         if (entryHandler != null) {
@@ -44,8 +52,16 @@ public class MapRowDataHandlerImpl implements RowDataHandler<List<Map<String, St
         }
     }
 
+    /**
+     * process ddl sql
+     *
+     * @param sql
+     * @param entryHandler
+     * @param eventType
+     * @throws Exception
+     */
     @Override
-    public <R> void handlerDdlData() throws Exception {
+    public <R> void handlerDdlData(String sql, EntryHandler<R> entryHandler, CanalEntry.EventType eventType) throws Exception {
 
     }
 }
