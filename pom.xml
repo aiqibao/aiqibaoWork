@@ -28,6 +28,9 @@
         <module>pay-service</module>
         <module>jvm-study</module>
         <module>kafka-demo</module>
+        <module>juc</module>
+        <module>netty-io</module>
+        <module>design-pattern</module>
     </modules>
     <name>aiqibaowork</name>
     <description>aiqibaowork</description>
