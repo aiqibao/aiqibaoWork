@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 public class TokenRedisServiceImp implements TokenReidsService {
     /** 前缀 */
     private static final String PRE_KEY = "token:";
-    @Resource(name="redisTemplate")
+    @Resource
     private ValueOperations<String,String> vops ;
-    @Resource(name="redisTemplate")
+    @Resource(name = "redisTemplate")
     private RedisTemplate<String,String> redisTemplate ;
     /**
      * 往redis存入token

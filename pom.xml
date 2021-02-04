@@ -33,6 +33,7 @@
         <module>netty-io</module>
         <module>design-pattern</module>
         <module>dubbo-demo</module>
+        <module>zookeeper</module>
     </modules>
     <name>aiqibaowork</name>
     <description>aiqibaowork</description>
